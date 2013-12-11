@@ -23,10 +23,10 @@ import javax.jms.TextMessage;
 @Stateless
 @LocalBean
 public class SenderQueueEJB435 {
-    @Resource(lookup = "jms/ConnectionTest1")
+    @Resource(mappedName = "jms/ConnectionTest1")
     private ConnectionFactory connectionFactory;
     
-    @Resource(lookup = "jms/Queue435")
+    @Resource(mappedName = "jms/Queue435")
     private Queue queue435;
 
     public void sendQueue() {
