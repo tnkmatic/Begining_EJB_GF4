@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.ejb.jms.client;
+package begining.gf4.ejb.jms.client;
 
 import java.util.Date;
 import javax.annotation.Resource;
@@ -23,10 +23,10 @@ import javax.jms.TextMessage;
 @Stateless
 @LocalBean
 public class SenderQueueEJB435 {
-    @Resource(mappedName = "jms/ConnectionTest1")
+    @Resource(lookup = "jms/ConnectionTest1")
     private ConnectionFactory connectionFactory;
     
-    @Resource(mappedName = "jms/Queue435")
+    @Resource(lookup = "jms/Queue435")
     private Queue queue435;
 
     public void sendQueue() {
@@ -47,7 +47,7 @@ public class SenderQueueEJB435 {
             * 送信メッセージ作成
             *******************************************************************/
             final StringBuilder sb = new StringBuilder();
-            sb.append(SenderQueueEJB435.class.getName());
+            sb.append(SenderQueueEJB435.class.getSimpleName());
             sb.append("#");
             sb.append("This is a Queue text message sent at");
             sb.append(new Date());

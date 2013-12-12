@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.ejb.jms.client;
+package begining.gf4.ejb.jms.client;
 
-import begining.com.ConstantValue;
+import begining.gf4.com.ConstantValue;
 import java.util.Date;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;

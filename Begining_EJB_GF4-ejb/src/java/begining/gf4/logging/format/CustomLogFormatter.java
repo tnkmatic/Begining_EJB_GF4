@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.logging.format;
+package begining.gf4.logging.format;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

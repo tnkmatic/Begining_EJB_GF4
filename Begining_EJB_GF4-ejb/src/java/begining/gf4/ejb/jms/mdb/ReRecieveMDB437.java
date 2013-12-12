@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.ejb.jms.mdb;
+package begining.gf4.ejb.jms.mdb;
 
 import java.util.logging.Level;
 import javax.ejb.ActivationConfigProperty;
@@ -18,13 +18,19 @@ import java.util.logging.Logger;
  * @author Eiichi Tanaka
  */
 @MessageDriven(
-    mappedName = "jms/QueueTest2",        
+    mappedName = "jms/QueueTest2",
     activationConfig = {
-    @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")
+        @ActivationConfigProperty(
+            propertyName   = "acknowledgeMode"
+            ,propertyValue = "Auto-acknowledge")
+        ,@ActivationConfigProperty(
+            propertyName = "destinationType"
+            ,propertyValue = "javax.jms.Queue")
+        ,@ActivationConfigProperty(
+            propertyName = "destinationLookup"
+            ,propertyValue = "jms/QueueTest2")
     }
 )
-
-なぜ、"jms/Queue435" を受け取ってしまうのか？
 
 public class ReRecieveMDB437 implements MessageListener {
     
@@ -42,8 +48,8 @@ public class ReRecieveMDB437 implements MessageListener {
                     Level.INFO
                     ,"{0} : Resend Message Recieved : {1}"
                     ,new String[]{
-                        ReRecieveMDB437.class.getSimpleName(),
-                        msg.getText()
+                        ReRecieveMDB437.class.getSimpleName()
+                        ,msg.getText()
                     });
         } catch (JMSException e1) {
             

@@ -2,8 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.ejb.jms.mdb;
+package begining.gf4.ejb.jms.mdb;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
@@ -15,19 +17,29 @@ import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import javax.jms.MessageProducer;
-import javax.jms.Session;
 import javax.jms.TextMessage;
 
 /**
  *
  * @author Eiichi Tanaka
  */
-@MessageDriven(activationConfig = {
-    @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-    @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/QueueTest1")
+@MessageDriven(
+    mappedName = "jms/QueueTest1"
+    ,activationConfig = {
+        @ActivationConfigProperty(
+            propertyName   = "acknowledgeMode"
+            ,propertyValue = "Auto-acknowledge")
+        ,@ActivationConfigProperty(
+            propertyName = "destinationType"
+            ,propertyValue = "javax.jms.Queue")
+        ,@ActivationConfigProperty(
+            propertyName = "destinationLookup"
+            ,propertyValue = "jms/QueueTest1")
 })
 public class BillingMDB437 implements MessageListener {
+    private static final Logger logger =
+            Logger.getLogger(BillingMDB437.class.getName());
+    
     @Resource(lookup = "jms/QueueTest2")
     private Destination printingQueue;
     
@@ -59,15 +71,24 @@ public class BillingMDB437 implements MessageListener {
     
     @Override
     public void onMessage(Message message) {
-        /*
         try {
             TextMessage msg = (TextMessage) message;
-            System.out.println("Message Recieved: " + msg.getText());
-            sendPrintingMessage();
-        } catch (JMSException e1) {
             
+            logger.log(
+                    Level.INFO
+                    ,"{0} : Message Received : {1}"
+                    ,new String[]{
+                        BillingMDB437.class.getSimpleName()
+                        ,msg.getText()
+                    });
+            
+            //sendPrintingMessage();
+        } catch (JMSException e1) {
+            logger.log(
+                    Level.SEVERE, "{0} {1}"
+                    , new Object[]{
+                        e1.getErrorCode(), e1.getMessage()});
         }
-        */
     }
     
     private void sendPrintingMessage() throws JMSException {
