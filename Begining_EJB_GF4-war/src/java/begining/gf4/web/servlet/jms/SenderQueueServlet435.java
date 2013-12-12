@@ -4,7 +4,8 @@
  */
 package begining.gf4.web.servlet.jms;
 
-import begining.ejb.jms.client.SenderQueueEJB435;
+import begining.gf4.ejb.jms.client.SenderQueueEJB435;
+import begining.gf4.common.ConstantValue;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "SenderQueueServlet435", urlPatterns = {"/SenderQueue435"})
 @ServletSecurity(
-            @HttpConstraint(rolesAllowed = {"admin_role"}))
+    @HttpConstraint(rolesAllowed = {ConstantValue.ROLE_ADMIN_ROLE}))
 public class SenderQueueServlet435 extends HttpServlet {
     @EJB
     SenderQueueEJB435 ejb;

@@ -4,7 +4,7 @@
  */
 package begining.gf4.web.servlet.jms;
 
-import begining.ejb.jms.client.SenderTopicEJB431;
+import begining.gf4.ejb.jms.client.SenderTopicEJB431;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
