@@ -4,6 +4,7 @@
  */
 package begining.gf4.ejb.jms.mdb;
 
+import begining.gf4.com.ConstantValue;
 import java.util.logging.Level;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
@@ -46,9 +47,10 @@ public class ReRecieveMDB437 implements MessageListener {
             TextMessage msg = (TextMessage) message;
             logger.log(
                     Level.INFO
-                    ,"{0} : Resend Message Recieved : {1}"
+                    ,"{0} {1} : Resend Message Recieved : {1}"
                     ,new String[]{
                         ReRecieveMDB437.class.getSimpleName()
+                        ,ConstantValue.JMS_QUEUE_TEST2_NAME
                         ,msg.getText()
                     });
         } catch (JMSException e1) {

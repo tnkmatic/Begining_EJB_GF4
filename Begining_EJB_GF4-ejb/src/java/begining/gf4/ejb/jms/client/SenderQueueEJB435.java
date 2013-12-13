@@ -4,7 +4,10 @@
  */
 package begining.gf4.ejb.jms.client;
 
+import begining.gf4.com.ConstantValue;
+import java.util.logging.Logger;
 import java.util.Date;
+import java.util.logging.Level;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -28,8 +31,14 @@ public class SenderQueueEJB435 {
     
     @Resource(lookup = "jms/Queue435")
     private Queue queue435;
+    
+    @Resource(lookup = "jms/QueueTest1")
+    private Queue queueTest1;
+    
+    private static final Logger logger =
+            Logger.getLogger(SenderQueueEJB435.class.getName());
 
-    public void sendQueue() {
+    public void sendQueue(final String queueName) {
         Connection connection = null;
         Session session = null;
         MessageProducer producer = null;
@@ -41,13 +50,37 @@ public class SenderQueueEJB435 {
             connection = connectionFactory.createConnection();
             session    = 
                     connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            producer = session.createProducer(queue435);
+            
+            logger.log(
+                Level.INFO, "{0}#{1} : 送信キュー = {2}"
+                ,new String[] {
+                    SenderQueueEJB435.class.getSimpleName()
+                    ,"sendQueue"
+                    ,queueName
+                });
+            
+            if (ConstantValue.JMS_QUQUE_435_NAME.equals(queueName)) {
+                producer = session.createProducer(queue435);
+            } else if (ConstantValue.JMS_QUEUE_TEST1_NAME.equals(queueName)) {
+                producer = session.createProducer(queueTest1);
+            } else {
+                logger.log(
+                    Level.WARNING
+                    ,"{0}#{1} : パラメータが不正です。"
+                    ,new String[] {
+                        SenderQueueEJB435.class.getSimpleName()
+                        ,"sendQueue"
+                    });
+                return;
+            }
             
             /*******************************************************************
             * 送信メッセージ作成
             *******************************************************************/
             final StringBuilder sb = new StringBuilder();
             sb.append(SenderQueueEJB435.class.getSimpleName());
+            sb.append("#");
+            sb.append(queueName);
             sb.append("#");
             sb.append("This is a Queue text message sent at");
             sb.append(new Date());

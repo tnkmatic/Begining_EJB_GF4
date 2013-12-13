@@ -4,6 +4,7 @@
  */
 package begining.gf4.ejb.jms.mdb;
 
+import begining.gf4.com.ConstantValue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
@@ -76,9 +77,10 @@ public class BillingMDB437 implements MessageListener {
             
             logger.log(
                     Level.INFO
-                    ,"{0} : Message Received : {1}"
+                    ,"{0} {1} : Message Received : {2}"
                     ,new String[]{
                         BillingMDB437.class.getSimpleName()
+                        ,ConstantValue.JMS_QUEUE_TEST1_NAME
                         ,msg.getText()
                     });
             

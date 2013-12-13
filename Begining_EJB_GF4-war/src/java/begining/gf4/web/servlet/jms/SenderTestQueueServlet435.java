@@ -5,12 +5,9 @@
 package begining.gf4.web.servlet.jms;
 
 import begining.gf4.ejb.jms.client.SenderQueueEJB435;
-import begining.gf4.common.ConstantValue;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.HttpConstraint;
-import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,15 +15,15 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Eiichi Tanaka
+ * @author z2050028
  */
-@WebServlet(name = "SenderQueueServlet435", urlPatterns = {"/SenderQueue435"})
-//@ServletSecurity(
-//    @HttpConstraint(rolesAllowed = {ConstantValue.ROLE_ADMIN_ROLE}))
-public class SenderQueueServlet435 extends HttpServlet {
+@WebServlet(
+        name = "SenderTestQueueServlet435"
+        ,urlPatterns = {"/SenderTestQueue435"})
+public class SenderTestQueueServlet435 extends HttpServlet {
     @EJB
     SenderQueueEJB435 ejb;
-
+    
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -37,10 +34,11 @@ public class SenderQueueServlet435 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(
+            HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ejb.sendQueue(begining.gf4.com.ConstantValue.JMS_QUQUE_435_NAME);
+        ejb.sendQueue(begining.gf4.com.ConstantValue.JMS_QUEUE_TEST1_NAME);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

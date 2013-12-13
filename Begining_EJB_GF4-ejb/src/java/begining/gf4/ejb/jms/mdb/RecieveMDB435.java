@@ -4,6 +4,7 @@
  */
 package begining.gf4.ejb.jms.mdb;
 
+import begining.gf4.com.ConstantValue;
 import java.security.Principal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,8 +59,12 @@ public class RecieveMDB435 implements MessageListener {
                     Level.INFO
                     , Thread.currentThread().getStackTrace()[0].getClassName()
                     , Thread.currentThread().getStackTrace()[0].getMethodName()
-                    , "MDB Message recieved : {0}"
-                    , msg.getText());
+                    , "{0} {1} : MDB Message recieved : {2}"
+                    , new String[] {
+                        RecieveMDB435.class.getSimpleName()
+                        ,ConstantValue.JMS_QUQUE_435_NAME
+                        ,msg.getText()
+                    });
         } catch (JMSException e1) {
             logger.log(Level.SEVERE, e1.getMessage());
         }

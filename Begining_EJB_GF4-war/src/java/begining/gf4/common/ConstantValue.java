@@ -9,7 +9,9 @@ package begining.gf4.common;
  * @author Eiichi Tanaka
  */
 public class ConstantValue {
+    /***************************************************************************
+     * Security Role
+     **************************************************************************/
     public static final String ROLE_ADMIN_ROLE = "admin_role";
     public static final String ROLE_USER_ROLE  = "user_role";
-    
 }

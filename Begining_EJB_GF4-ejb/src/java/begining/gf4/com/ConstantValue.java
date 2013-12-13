@@ -10,12 +10,13 @@ package begining.gf4.com;
  */
 public class ConstantValue {
     /***************************************************************************
-     * BillingMDB
+     * JMS
      **************************************************************************/
-    public static String JMS_CONNECTION_NAME = "jms/ConnectionTest1";
+    public static String JMS_CONNECTION_NAME  = "jms/ConnectionTest1";
     public static String JMS_TOPIC_TEST1_NAME = "jms/TopicTest1";
     public static String JMS_QUEUE_TEST1_NAME = "jms/QueueTest1";
     public static String JMS_QUEUE_TEST2_NAME = "jms/QueueTest2";
+    public static String JMS_QUQUE_435_NAME   = "jms/Queue435";
     
     /***************************************************************************
      * glassfish-application.xml
