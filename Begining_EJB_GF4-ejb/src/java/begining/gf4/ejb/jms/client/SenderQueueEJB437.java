@@ -4,7 +4,7 @@
  */
 package begining.gf4.ejb.jms.client;
 
-import begining.gf4.com.ConstantValue;
+import begining.gf4.ejb.common.ConstantValueEJB;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;

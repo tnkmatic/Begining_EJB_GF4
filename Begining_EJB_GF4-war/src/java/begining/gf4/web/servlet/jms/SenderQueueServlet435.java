@@ -5,7 +5,7 @@
 package begining.gf4.web.servlet.jms;
 
 import begining.gf4.ejb.jms.client.SenderQueueEJB435;
-import begining.gf4.common.ConstantValue;
+import begining.gf4.web.common.ConstantValueWeb;
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -40,7 +40,7 @@ public class SenderQueueServlet435 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ejb.sendQueue(begining.gf4.com.ConstantValue.JMS_QUQUE_435_NAME);
+        ejb.sendQueue(begining.gf4.ejb.common.ConstantValueEJB.JMS_QUQUE_435_NAME);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

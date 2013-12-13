@@ -4,7 +4,7 @@
  */
 package begining.gf4.ejb.jms.client;
 
-import begining.gf4.com.ConstantValue;
+import begining.gf4.ejb.common.ConstantValueEJB;
 import java.util.Date;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -37,8 +37,8 @@ public class SenderTopicEJB431 {
             Context jndiContext = new InitialContext();
 
             ConnectionFactory connectionFactory =
-                    lookupConnectionFactory(jndiContext, ConstantValue.JMS_CONNECTION_NAME);
-            Topic topic = lookupTopic(jndiContext, ConstantValue.JMS_TOPIC_TEST1_NAME);
+                    lookupConnectionFactory(jndiContext, ConstantValueEJB.JMS_CONNECTION_NAME);
+            Topic topic = lookupTopic(jndiContext, ConstantValueEJB.JMS_TOPIC_TEST1_NAME);
             
             //トピックへの接続に必要なオブジェクトを作成
             connection = connectionFactory.createConnection();

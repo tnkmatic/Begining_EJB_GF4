@@ -38,7 +38,7 @@ public class SenderTestQueueServlet435 extends HttpServlet {
             HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ejb.sendQueue(begining.gf4.com.ConstantValue.JMS_QUEUE_TEST1_NAME);
+        ejb.sendQueue(begining.gf4.ejb.common.ConstantValueEJB.JMS_QUEUE_TEST1_NAME);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

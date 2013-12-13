@@ -4,7 +4,7 @@
  */
 package begining.gf4.ejb.jms.client;
 
-import begining.gf4.com.ConstantValue;
+import begining.gf4.ejb.common.ConstantValueEJB;
 import java.util.logging.Logger;
 import java.util.Date;
 import java.util.logging.Level;
@@ -59,9 +59,9 @@ public class SenderQueueEJB435 {
                     ,queueName
                 });
             
-            if (ConstantValue.JMS_QUQUE_435_NAME.equals(queueName)) {
+            if (ConstantValueEJB.JMS_QUQUE_435_NAME.equals(queueName)) {
                 producer = session.createProducer(queue435);
-            } else if (ConstantValue.JMS_QUEUE_TEST1_NAME.equals(queueName)) {
+            } else if (ConstantValueEJB.JMS_QUEUE_TEST1_NAME.equals(queueName)) {
                 producer = session.createProducer(queueTest1);
             } else {
                 logger.log(

@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.gf4.common;
+package begining.gf4.web.common;
 
 /**
  *
  * @author Eiichi Tanaka
  */
-public class ConstantValue {
+public class ConstantValueWeb {
     /***************************************************************************
      * Security Role
      **************************************************************************/

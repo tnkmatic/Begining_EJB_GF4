@@ -4,7 +4,7 @@
  */
 package begining.gf4.ejb.jms.mdb;
 
-import begining.gf4.com.ConstantValue;
+import begining.gf4.ejb.common.ConstantValueEJB;
 import java.util.logging.Level;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
@@ -19,8 +19,9 @@ import java.util.logging.Logger;
  * @author Eiichi Tanaka
  */
 @MessageDriven(
-    mappedName = "jms/QueueTest2",
-    activationConfig = {
+    name = "ReRecieveMDB437"
+    ,mappedName = "jms/QueueTest2"
+    ,activationConfig = {
         @ActivationConfigProperty(
             propertyName   = "acknowledgeMode"
             ,propertyValue = "Auto-acknowledge")
@@ -30,8 +31,7 @@ import java.util.logging.Logger;
         ,@ActivationConfigProperty(
             propertyName = "destinationLookup"
             ,propertyValue = "jms/QueueTest2")
-    }
-)
+})
 
 public class ReRecieveMDB437 implements MessageListener {
     
@@ -50,7 +50,7 @@ public class ReRecieveMDB437 implements MessageListener {
                     ,"{0} {1} : Resend Message Recieved : {1}"
                     ,new String[]{
                         ReRecieveMDB437.class.getSimpleName()
-                        ,ConstantValue.JMS_QUEUE_TEST2_NAME
+                        ,ConstantValueEJB.JMS_QUEUE_TEST2_NAME
                         ,msg.getText()
                     });
         } catch (JMSException e1) {

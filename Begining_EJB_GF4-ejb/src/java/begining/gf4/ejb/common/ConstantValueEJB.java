@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.gf4.com;
+package begining.gf4.ejb.common;
 
 /**
  *
  * @author Eiichi Tanaka
  */
-public class ConstantValue {
+public class ConstantValueEJB {
     /***************************************************************************
      * JMS
      **************************************************************************/
@@ -24,11 +24,4 @@ public class ConstantValue {
     public static String SECURITY_USER_ROLE  = "user_role";
     public static String SECURITY_ADMIN_ROLE = "admin_role";
     public static String SECURITY_ANONYMOUS  = "ANONYMOUS";
-    
-
-    
-    
-    
-    
-    
 }

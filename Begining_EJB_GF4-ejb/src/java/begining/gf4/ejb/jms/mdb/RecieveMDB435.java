@@ -4,7 +4,7 @@
  */
 package begining.gf4.ejb.jms.mdb;
 
-import begining.gf4.com.ConstantValue;
+import begining.gf4.ejb.common.ConstantValueEJB;
 import java.security.Principal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +22,8 @@ import javax.jms.TextMessage;
  * @author Eiichi Tanaka
  */
 @MessageDriven(
-    mappedName = "jms/Queue435"
+    name = "RecieveMDB435"
+    ,mappedName = "jms/Queue435"
     ,activationConfig = {
         @ActivationConfigProperty(
             propertyName   = "acknowledgeMode"
@@ -62,7 +63,7 @@ public class RecieveMDB435 implements MessageListener {
                     , "{0} {1} : MDB Message recieved : {2}"
                     , new String[] {
                         RecieveMDB435.class.getSimpleName()
-                        ,ConstantValue.JMS_QUQUE_435_NAME
+                        ,ConstantValueEJB.JMS_QUQUE_435_NAME
                         ,msg.getText()
                     });
         } catch (JMSException e1) {
