@@ -17,6 +17,7 @@ public class ConstantValueEJB {
     public static String JMS_QUEUE_TEST1_NAME = "jms/QueueTest1";
     public static String JMS_QUEUE_TEST2_NAME = "jms/QueueTest2";
     public static String JMS_QUQUE_435_NAME   = "jms/Queue435";
+    public static String JMS_QUEUE_440_NAME   = "jms/Queue440";
     
     /***************************************************************************
      * glassfish-application.xml
