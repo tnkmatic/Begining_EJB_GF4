@@ -4,6 +4,9 @@
     <service name="CardValidatorEJB453">
       <implementation-class>begining.gf4.ejb.soap.service.CardValidatorEJB453</implementation-class>
     </service>
+    <service name="TestWS453">
+      <implementation-class>begining.gf4.ejb.soap.service.TestWS453</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

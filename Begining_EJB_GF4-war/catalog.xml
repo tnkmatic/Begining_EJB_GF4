@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/CardValidatorEJB453/CardValidatorEJB453?wsdl" uri="src/conf/xml-resources/web-service-references/CardValidatorEJB453/wsdl/localhost_8080/CardValidatorEJB453/CardValidatorEJB453.wsdl"/>
+    <system systemId="http://localhost:8080/CardValidatorEJB453/CardValidatorEJB453?xsd=1" uri="src/conf/xml-resources/web-service-references/CardValidatorEJB453/wsdl/localhost_8080/CardValidatorEJB453/CardValidatorEJB453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TestWS453/TestWS453?wsdl" uri="src/conf/xml-resources/web-service-references/TestWS453/wsdl/localhost_8080/TestWS453/TestWS453.wsdl"/>
+    <system systemId="http://localhost:8080/TestWS453/TestWS453?xsd=1" uri="src/conf/xml-resources/web-service-references/TestWS453/wsdl/localhost_8080/TestWS453/TestWS453.xsd_1.xsd"/>
+</catalog>
