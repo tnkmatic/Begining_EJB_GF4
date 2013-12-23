@@ -4,6 +4,7 @@
  */
 package begining.gf4.soap.element;
 
+import java.io.Serializable;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -11,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Eiichi Tanaka
  */
 @XmlRootElement
-public class CreditCard453 {
+public class CreditCard453 implements Serializable {
     private String  number;
     private String  expiryDate;
     private Integer controlNumber;

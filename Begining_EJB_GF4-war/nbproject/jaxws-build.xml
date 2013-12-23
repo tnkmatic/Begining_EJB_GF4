@@ -26,37 +26,37 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-CardValidatorEJB453" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/CardValidatorEJB453"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CardValidatorEJB453" destdir="${build.generated.dir}/jax-wsCache/CardValidatorEJB453" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CardValidatorEJB453/wsdl/localhost_8080/CardValidatorEJB453/CardValidatorEJB453.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8080/CardValidatorEJB453/CardValidatorEJB453?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CardValidatorEJB453/wsdl/localhost_8080/CardValidatorEJB453/CardValidatorEJB453.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/CardValidatorEJB453"/>
+    <target name="wsimport-client-Test1WS453" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Test1WS453"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Test1WS453" destdir="${build.generated.dir}/jax-wsCache/Test1WS453" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Test1WS453/wsdl/localhost_8080/Test1WS453/Test1WS453.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8080/Test1WS453/Test1WS453?wsdl" xnocompile="true" xendorsed="true" package="begining.ws.jaxws.test.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Test1WS453/wsdl/localhost_8080/Test1WS453/Test1WS453.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Test1WS453"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/CardValidatorEJB453">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Test1WS453">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-CardValidatorEJB453" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/begining/gf4/ejb/soap/service"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/CardValidatorEJB453"/>
+    <target name="wsimport-client-clean-Test1WS453" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/begining/ws/jaxws/test/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Test1WS453"/>
     </target>
-    <target name="wsimport-client-TestWS453" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/TestWS453"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TestWS453" destdir="${build.generated.dir}/jax-wsCache/TestWS453" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TestWS453/wsdl/localhost_8080/TestWS453/TestWS453.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8080/TestWS453/TestWS453?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TestWS453/wsdl/localhost_8080/TestWS453/TestWS453.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/TestWS453"/>
+    <target name="wsimport-client-CardValidator453" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CardValidator453"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CardValidator453" destdir="${build.generated.dir}/jax-wsCache/CardValidator453" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CardValidator453/wsdl/localhost_8080/CardValidatorWS453/CardValidator453.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8080/CardValidatorWS453/CardValidator453?wsdl" xnocompile="true" xendorsed="true" package="begining.ws.jaxws.creditcard.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CardValidator453/wsdl/localhost_8080/CardValidatorWS453/CardValidator453.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CardValidator453"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/TestWS453">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CardValidator453">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-TestWS453" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/begining/gf4/ejb/soap/service"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/TestWS453"/>
+    <target name="wsimport-client-clean-CardValidator453" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/begining/ws/jaxws/creditcard/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/CardValidator453"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-CardValidatorEJB453, wsimport-client-TestWS453"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-Test1WS453, wsimport-client-CardValidator453"/>
 </project>

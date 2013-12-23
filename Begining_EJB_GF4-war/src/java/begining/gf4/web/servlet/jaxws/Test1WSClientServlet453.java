@@ -2,13 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package begining.gf4.web.servlet.soap.client;
+package begining.gf4.web.servlet.jaxws;
 
-import begining.gf4.ejb.soap.service.CreditCard453;
-import begining.gf4.ejb.soap.service.TestWS453_Service;
+import begining.ws.jaxws.test.client.Test1WS453_Service;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,14 +18,10 @@ import javax.xml.ws.WebServiceRef;
  *
  * @author Eiichi Tanaka
  */
-@WebServlet(name = "TestClientServlet453", urlPatterns = {"/TestClient453"})
-public class TestClientServlet453 extends HttpServlet {
-    private static final java.util.logging.Logger logger =
-            java.util.logging.Logger.getLogger(
-            TestClientServlet453.class.getName());
-    
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/TestWS453/TestWS453.wsdl")
-    private TestWS453_Service service;
+@WebServlet(name = "Test1WSClientServlet453", urlPatterns = {"/Test1WSClient453"})
+public class Test1WSClientServlet453 extends HttpServlet {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Test1WS453/Test1WS453.wsdl")
+    private Test1WS453_Service service;
 
     /**
      * Processes requests for both HTTP
@@ -41,51 +35,22 @@ public class TestClientServlet453 extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Boolean validateResult = Boolean.valueOf(false);
-        try {
-            /**********************************************************************
-             * CreditCard453の生成
-             *********************************************************************/
-            CreditCard453 creditCard = new CreditCard453();
-            creditCard.setNumber("12341234");
-            creditCard.setExpiryDate("10/10");
-            creditCard.setType("VISA");
-            creditCard.setControlNumber(1234);
-
-            logger.log(Level.INFO, "CreditCard453を生成 : number = {0}"
-                    ,new String[] {
-                        creditCard.getNumber()
-                    });
-
-            /**********************************************************************
-             * Webサービス呼び出し(validate)
-             *********************************************************************/
-            validateResult = testValidate(creditCard);
-
-            logger.log(Level.INFO, "Webサービス呼び出し(validate) : result = {0}"
-                    ,new String[] {
-                        validateResult.toString()
-                    });
-        } catch (Exception e1) {
-            logger.log(Level.SEVERE, "Webサービス実行エラー : {0}"
-                    ,new String[]{e1.getMessage()});
-            throw new ServletException(e1);
-        }
-        
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
+        try {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet TestClientServlet453</title>");            
+            out.println("<title>Servlet Test1WSClientServlet453</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet TestClientServlet453 at " 
-                    + request.getContextPath() + "</h1>");
-            out.println(validateResult.toString());
+            out.println("<h1>Servlet Test1WSClientServlet453 at " + request.getContextPath() + "</h1>");
+            out.println(hello("abcdefg"));
             out.println("</body>");
             out.println("</html>");
+        } finally {            
+            out.close();
         }
     }
 
@@ -130,9 +95,19 @@ public class TestClientServlet453 extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private Boolean testValidate(
-            begining.gf4.ejb.soap.service.CreditCard453 creditCard) {
-        begining.gf4.ejb.soap.service.TestWS453 port = service.getTestWS453Port();
-        return port.testValidate(creditCard);
+    /***************************************************************************
+     * Helloウェブサービスの呼び出し
+     * ※注意
+     * 　「Webサービスクライアント」を新規作成する際、
+     * 　クライアントJavaアーティファクトを生成するパッケージ名をデフォルト
+     * 　にしてしまうと、Webサービスを利用するサーブレットで呼び出し時に例外
+     * 　が発生してしまう。(IllegalException - not interface)
+     * 　必ずアーティファクトを生成するパッケージ名を指定すること
+     * @param name
+     * @return 
+     **************************************************************************/
+    private String hello(java.lang.String name) {
+        begining.ws.jaxws.test.client.Test1WS453 port = service.getTest1WS453Port();
+        return port.hello(name);
     }
 }

@@ -2,10 +2,10 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
-    <client name="CardValidatorEJB453">
-      <wsdl-url>http://localhost:8080/CardValidatorEJB453/CardValidatorEJB453?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/CardValidatorEJB453/CardValidatorEJB453.wsdl</local-wsdl-file>
-      <package-name>begining.gf4.ejb.soap.service</package-name>
+    <client name="Test1WS453">
+      <wsdl-url>http://localhost:8080/Test1WS453/Test1WS453?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/Test1WS453/Test1WS453.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">begining.ws.jaxws.test.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -18,7 +18,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/CardValidatorEJB453/CardValidatorEJB453?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/Test1WS453/Test1WS453?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -27,13 +27,17 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>begining.ws.jaxws.test.client</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="TestWS453">
-      <wsdl-url>http://localhost:8080/TestWS453/TestWS453?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/TestWS453/TestWS453.wsdl</local-wsdl-file>
-      <package-name>begining.gf4.ejb.soap.service</package-name>
+    <client name="CardValidator453">
+      <wsdl-url>http://localhost:8080/CardValidatorWS453/CardValidator453?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/CardValidatorWS453/CardValidator453.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">begining.ws.jaxws.creditcard.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -46,7 +50,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/TestWS453/TestWS453?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/CardValidatorWS453/CardValidator453?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -55,6 +59,10 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>begining.ws.jaxws.creditcard.client</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

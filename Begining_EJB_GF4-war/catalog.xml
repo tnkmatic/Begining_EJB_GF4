@@ -4,4 +4,16 @@
     <system systemId="http://localhost:8080/CardValidatorEJB453/CardValidatorEJB453?xsd=1" uri="src/conf/xml-resources/web-service-references/CardValidatorEJB453/wsdl/localhost_8080/CardValidatorEJB453/CardValidatorEJB453.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/TestWS453/TestWS453?wsdl" uri="src/conf/xml-resources/web-service-references/TestWS453/wsdl/localhost_8080/TestWS453/TestWS453.wsdl"/>
     <system systemId="http://localhost:8080/TestWS453/TestWS453?xsd=1" uri="src/conf/xml-resources/web-service-references/TestWS453/wsdl/localhost_8080/TestWS453/TestWS453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Test2WS453/Test2WS453?wsdl" uri="src/conf/xml-resources/web-service-references/Test2WS453/wsdl/localhost_8080/Test2WS453/Test2WS453.wsdl"/>
+    <system systemId="http://localhost:8080/Test2WS453/Test2WS453?xsd=1" uri="src/conf/xml-resources/web-service-references/Test2WS453/wsdl/localhost_8080/Test2WS453/Test2WS453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Test3WS453/Test3WS453?wsdl" uri="src/conf/xml-resources/web-service-references/Test3WS453/wsdl/localhost_8080/Test3WS453/Test3WS453.wsdl"/>
+    <system systemId="http://localhost:8080/Test3WS453/Test3WS453?xsd=1" uri="src/conf/xml-resources/web-service-references/Test3WS453/wsdl/localhost_8080/Test3WS453/Test3WS453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Test5WS453/Test5WS453?wsdl" uri="src/conf/xml-resources/web-service-references/Test5WS453/wsdl/localhost_8080/Test5WS453/Test5WS453.wsdl"/>
+    <system systemId="http://localhost:8080/Test5WS453/Test5WS453?xsd=1" uri="src/conf/xml-resources/web-service-references/Test5WS453/wsdl/localhost_8080/Test5WS453/Test5WS453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Test4WS453/Test4WS453?wsdl" uri="src/conf/xml-resources/web-service-references/Test4WS453/wsdl/localhost_8080/Test4WS453/Test4WS453.wsdl"/>
+    <system systemId="http://localhost:8080/Test4WS453/Test4WS453?xsd=1" uri="src/conf/xml-resources/web-service-references/Test4WS453/wsdl/localhost_8080/Test4WS453/Test4WS453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Test1WS453/Test1WS453?wsdl" uri="src/conf/xml-resources/web-service-references/Test1WS453/wsdl/localhost_8080/Test1WS453/Test1WS453.wsdl"/>
+    <system systemId="http://localhost:8080/Test1WS453/Test1WS453?xsd=1" uri="src/conf/xml-resources/web-service-references/Test1WS453/wsdl/localhost_8080/Test1WS453/Test1WS453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/CardValidatorWS453/CardValidator453?wsdl" uri="src/conf/xml-resources/web-service-references/CardValidator453/wsdl/localhost_8080/CardValidatorWS453/CardValidator453.wsdl"/>
+    <system systemId="http://localhost:8080/CardValidatorWS453/CardValidator453?xsd=1" uri="src/conf/xml-resources/web-service-references/CardValidator453/wsdl/localhost_8080/CardValidatorWS453/CardValidator453.xsd_1.xsd"/>
 </catalog>

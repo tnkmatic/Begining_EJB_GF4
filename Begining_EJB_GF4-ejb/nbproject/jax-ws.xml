@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="CardValidatorEJB453">
-      <implementation-class>begining.gf4.ejb.soap.service.CardValidatorEJB453</implementation-class>
+    <service name="Test1WS453">
+      <implementation-class>begining.gf4.ejb.soap.service.Test1WS453</implementation-class>
     </service>
-    <service name="TestWS453">
-      <implementation-class>begining.gf4.ejb.soap.service.TestWS453</implementation-class>
+    <service name="CardValidator453">
+      <implementation-class>begining.gf4.ejb.soap.service.CardValidator453</implementation-class>
     </service>
   </services>
   <clients/>

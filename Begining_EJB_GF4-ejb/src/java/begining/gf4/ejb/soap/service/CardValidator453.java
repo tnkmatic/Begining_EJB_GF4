@@ -5,19 +5,27 @@
 package begining.gf4.ejb.soap.service;
 
 import begining.gf4.soap.element.CreditCard453;
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.ejb.Stateless;
 
 /**
  *
  * @author Eiichi Tanaka
  */
-@Stateless
-public class TestEJB453 implements TestEJB453Local {
+@WebService(serviceName = "CardValidatorWS453")
+@Stateless()
+public class CardValidator453 {
 
-    @Override
-    public Boolean validate(CreditCard453 creditCard) {
+    /**
+     * クレジットカード番号の最終桁チェック
+     */
+    @WebMethod(operationName = "validate")
+    public boolean validate(
+            @WebParam(name = "creditCard") CreditCard453 creditCard) {
         Character lastDigit = creditCard.getNumber().charAt(
-                creditCard.getNumber().length() - 1);
+                                    creditCard.getNumber().length() - 1);
         
         if (Integer.parseInt(lastDigit.toString()) % 2 != 0) {
             return true;
