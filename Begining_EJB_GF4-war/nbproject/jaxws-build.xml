@@ -58,5 +58,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/begining/ws/jaxws/creditcard/client"/>
         <delete dir="${build.generated.dir}/jax-wsCache/CardValidator453"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Test1WS453, wsimport-client-CardValidator453"/>
+    <target name="wsimport-client-TestWebContextService473" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/TestWebContextService473"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TestWebContextService473" destdir="${build.generated.dir}/jax-wsCache/TestWebContextService473" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TestWebContextService473/wsdl/localhost_8080/TestWebContextService473/TestWebContextService473.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8080/TestWebContextService473/TestWebContextService473?wsdl" xnocompile="true" xendorsed="true" package="begining.ws.jaxws.test.webcontext.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TestWebContextService473/wsdl/localhost_8080/TestWebContextService473/TestWebContextService473.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/TestWebContextService473"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/TestWebContextService473">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-TestWebContextService473" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/begining/ws/jaxws/test/webcontext/client"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/TestWebContextService473"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Test1WS453, wsimport-client-CardValidator453, wsimport-client-TestWebContextService473"/>
 </project>

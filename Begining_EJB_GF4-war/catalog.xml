@@ -16,4 +16,8 @@
     <system systemId="http://localhost:8080/Test1WS453/Test1WS453?xsd=1" uri="src/conf/xml-resources/web-service-references/Test1WS453/wsdl/localhost_8080/Test1WS453/Test1WS453.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/CardValidatorWS453/CardValidator453?wsdl" uri="src/conf/xml-resources/web-service-references/CardValidator453/wsdl/localhost_8080/CardValidatorWS453/CardValidator453.wsdl"/>
     <system systemId="http://localhost:8080/CardValidatorWS453/CardValidator453?xsd=1" uri="src/conf/xml-resources/web-service-references/CardValidator453/wsdl/localhost_8080/CardValidatorWS453/CardValidator453.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/TestWebContextService473/TestWebContextService473?wsdl" uri="src/conf/xml-resources/web-service-references/TestWebContextService473/wsdl/localhost_8080/TestWebContextService473/TestWebContextService473.wsdl"/>
+    <system systemId="http://localhost:8080/TestWebContextService473/TestWebContextService473?xsd=1" uri="src/conf/xml-resources/web-service-references/TestWebContextService473/wsdl/localhost_8080/TestWebContextService473/TestWebContextService473.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Begining_EJB_GF4-war/NewWebService?wsdl" uri="src/conf/xml-resources/web-service-references/NewWebService/wsdl/localhost_8080/Begining_EJB_GF4-war/NewWebService.wsdl"/>
+    <system systemId="http://localhost:8080/Begining_EJB_GF4-war/NewWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/NewWebService/wsdl/localhost_8080/Begining_EJB_GF4-war/NewWebService.xsd_1.xsd"/>
 </catalog>

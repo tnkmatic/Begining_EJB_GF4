@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
-  <services/>
+  <services>
+  </services>
   <clients>
     <client name="Test1WS453">
       <wsdl-url>http://localhost:8080/Test1WS453/Test1WS453?wsdl</wsdl-url>
@@ -63,6 +64,38 @@
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
           <wsimport-option-value>begining.ws.jaxws.creditcard.client</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="TestWebContextService473">
+      <wsdl-url>http://localhost:8080/TestWebContextService473/TestWebContextService473?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/TestWebContextService473/TestWebContextService473.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">begining.ws.jaxws.test.webcontext.client</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/TestWebContextService473/TestWebContextService473?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>begining.ws.jaxws.test.webcontext.client</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

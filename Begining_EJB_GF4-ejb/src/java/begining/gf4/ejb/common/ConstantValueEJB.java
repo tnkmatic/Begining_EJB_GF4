@@ -25,4 +25,9 @@ public class ConstantValueEJB {
     public static String SECURITY_USER_ROLE  = "user_role";
     public static String SECURITY_ADMIN_ROLE = "admin_role";
     public static String SECURITY_ANONYMOUS  = "ANONYMOUS";
+    
+    /***************************************************************************
+     * JPA
+     **************************************************************************/
+    public static String JPA_BOOK503_NAMEDQUERY_FIND_ALL_BOOKS = "findAllBooks503";
 }
