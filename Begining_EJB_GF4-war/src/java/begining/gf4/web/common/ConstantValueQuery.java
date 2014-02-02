@@ -10,6 +10,7 @@ package begining.gf4.web.common;
  */
 public class ConstantValueQuery {
     public final static String PARAM_BOOK503_ISBN = "isbn";
+    public final static String PARAM_BOOK503_TITLE = "title";
     
     public final static String NAMED_FIND_ALL_BOOKS503 = "findAllBooks503";
     public final static String QUERY_FIND_ALL_BOOKS503 = 

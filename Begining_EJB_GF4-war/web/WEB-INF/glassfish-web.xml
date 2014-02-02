@@ -16,4 +16,11 @@
       <description>Keep a copy of the generated servlet class' java code.</description>
     </property>
   </jsp-config>
+  
+    <!-- 
+    以下を指定しないとHTTPリクエストのボディがエンコーディングできない
+    (request.setCharacterEncoding を設定しても意味がない)
+    → request.setCharacterEncodingを実施してもエンコーディングされない
+    -->
+    <parameter-encoding default-charset="UTF-8" />
 </glassfish-web-app>

@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -70,9 +71,17 @@ public class BookResource503 {
                 ConstantValueQuery.NAMED_FIND_BOOK503_BY_ISBN);
         query.setParameter(ConstantValueQuery.PARAM_BOOK503_ISBN, isbn);
         
-        List<Book503> books = query.getResultList();
+        Book503 book = (Book503) query.getSingleResult();
         
-        return books.get(0);
+        logger.log(Level.INFO
+                ,"Result Book503 : id={0}, isbn={1}, title={2}"
+                ,new String[] {
+                    book.getId().toString(),
+                    book.getIsbn(),
+                    book.getTitle()
+                });
+        
+        return book;
     }
     
     @POST
@@ -84,7 +93,7 @@ public class BookResource503 {
             book.getTitle()
         });
 
-        Response response = null;        
+        Response response = null;
 
         //新規作成対象の永続化
         em.persist(book);
@@ -100,4 +109,39 @@ public class BookResource503 {
         
         return response;
     }
+    
+    @POST
+    @Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+    public Response createNewBookByForm(
+            @FormParam(ConstantValueQuery.PARAM_BOOK503_ISBN) String isbn
+           ,@FormParam(ConstantValueQuery.PARAM_BOOK503_TITLE) String title) {
+        logger.log(Level.INFO
+        ,"START createNewBookByForm : isbn={0}, title={1}"
+        ,new String[] {
+            isbn
+            ,title
+        });
+        
+        Response response = null;
+        
+        Book503 book = new Book503();
+        book.setIsbn(isbn);
+        book.setTitle(title);
+        
+        //新規作成対象の永続化
+        em.persist(book);
+        
+        URI bookUri = uriInfo.getAbsolutePathBuilder().path(
+                book.getId().toString()).build();
+        response = Response.created(bookUri).build();
+        
+        logger.log(Level.INFO
+                ,response.toString()
+                ,new String[] {                    
+                });
+
+        return response;
+    }
+    
+   
 }
