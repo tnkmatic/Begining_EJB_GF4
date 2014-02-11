@@ -15,9 +15,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -143,5 +145,54 @@ public class BookResource503 {
         return response;
     }
     
-   
+    @PUT
+    @Path("{" + ConstantValueQuery.PARAM_BOOK503_ISBN + "}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void updateBook(
+            @PathParam(ConstantValueQuery.PARAM_BOOK503_ISBN) String isbn
+            ,Book503 book) {
+        //開始ログ
+        logger.log(Level.INFO
+        ,"START updateBook : isbn={0}, title={1}"
+        ,new String[] {
+            isbn
+            ,book.getTitle()
+        });
+        
+        //更新対象の取得
+        Query query = em.createNamedQuery(
+                ConstantValueQuery.NAMED_FIND_BOOK503_BY_ISBN);
+        query.setParameter(ConstantValueQuery.PARAM_BOOK503_ISBN, isbn);        
+        Book503 nowBook = (Book503) query.getSingleResult();
+        
+        logger.log(Level.INFO
+                   ,"Now Title={0}, Update Title={1}"
+                   ,new String[] {
+                       nowBook.getTitle()
+                       ,book.getTitle()
+                   });
+        
+        //本の更新
+        nowBook.setTitle(book.getTitle());
+        em.persist(nowBook);
+    }
+    
+    @DELETE
+    @Path("{" + ConstantValueQuery.PARAM_BOOK503_ISBN + "}")
+    public void deleteBook(
+            @PathParam(ConstantValueQuery.PARAM_BOOK503_ISBN) String isbn) {
+        //開始ログ
+        logger.log(Level.INFO
+        ,"START deleteBook : isbn={0}"
+        ,new String[] {isbn});
+        
+        //削除対象の取得
+        Query query = em.createNamedQuery(
+                ConstantValueQuery.NAMED_FIND_BOOK503_BY_ISBN);
+        query.setParameter(ConstantValueQuery.PARAM_BOOK503_ISBN, isbn);
+        final Book503 book = (Book503) query.getSingleResult();
+
+        //本の削除
+        em.remove(book);
+    }
 }
